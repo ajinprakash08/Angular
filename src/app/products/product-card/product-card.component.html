@@ -1,0 +1,14 @@
+<div class="card" style="width: 15rem;">
+    <img [src]="(product?.payload?.url)?product?.payload?.url:'https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png'"
+        class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{(product?.payload?.title)?product?.payload?.title:'No Title'}}</h5>
+        <p class="card-text">{{product?.payload?.price | currency:'USD':true}}</p>
+        
+    </div>
+    <div class="card-footer">
+        <button  *ngIf="showactions" 
+        (click)="addToCart(product)"
+        class="btn btn-primary btn-block">Add to cart</button>
+    </div>
+</div>  
